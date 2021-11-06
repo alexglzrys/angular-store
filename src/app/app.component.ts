@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Product } from './interfaces/product.model';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,36 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular Store';
-  nombres:Array<string> = ['Alejandro', 'Fernanda', 'Damaris', 'Zoe'];
+  nombres: string[] = ['Alejandro', 'Fernanda', 'Damaris', 'Zoe'];
+  productos: Product[] = [
+    {
+      title: 'Mandarina',
+      description: 'Mandarina maracaná sin semilla',
+      price: 7,
+      image: 'assets/images/mandarina.jpg'
+    },
+    {
+      title: 'Uva roja',
+      description: 'Uva premier sin semilla y con jugo de calidad',
+      price: 45,
+      image: 'assets/images/uvas.jpg'
+    },
+    {
+      title: 'Manzana amarilla',
+      description: 'Manzana de rancho con cascara fina',
+      price: 15.50,
+      image: 'assets/images/manzana.jpg'
+    }
+  ];
 
-  agregarElemento() {
+  objetoFecha = new Date();
+  mes = this.objetoFecha.toLocaleString('es-mx', {month: 'long'});
+
+  agregarElemento(): void {
     this.nombres.push('Nuevo elemento');
   }
 
-  eliminarElemento(index: number) {
+  eliminarElemento(index: number): void {
     this.nombres.splice(index, 1);
   }
 }

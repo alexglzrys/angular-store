@@ -14,3 +14,21 @@
   </li>
   <li *ngIf="!nombres.length">No hay elementos en la lista</li>
 </ul>
+
+<ng-container [ngSwitch]="mes">
+  <p *ngSwitchCase="'noviembre'">Noviembre de Buen Fin</p>
+  <p *ngSwitchCase="'diciembre'">Diciembre de compras</p>
+  <p *ngSwitchCase="'julio'">Julio de cumpleaños</p>
+</ng-container>
+
+
+<h3>Listado de productos</h3>
+<div *ngFor="let producto of productos">
+  <p>{{ producto.title }}</p>
+  <img [src]="producto.image" [alt]="producto.title">
+  <p>{{ producto.description }}</p>
+  <p>Precio: $ {{ producto.price }} Kilo</p>
+</div>
+
+<h3>Componentes</h3>
+<app-product></app-product>
