@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-store';
+  title = 'Angular Store';
+  nombres:Array<string> = ['Alejandro', 'Fernanda', 'Damaris', 'Zoe'];
+
+  agregarElemento() {
+    this.nombres.push('Nuevo elemento');
+  }
+
+  eliminarElemento(index: number) {
+    this.nombres.splice(index, 1);
+  }
 }

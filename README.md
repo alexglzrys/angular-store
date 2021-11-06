@@ -2,11 +2,53 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.9.
 
-## Development server
+## Comandos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```
+// Correr el servidor local y abrir el navegador
+ng serve -o 
+ng serve --port 9000 -o
 
-## Code scaffolding
+// Empaquetar nuestra aplicación para producción
+ng build --prod
+
+// Ver la versión del CLI de Angular
+ng --version
+```
+
+## Conceptos
+
+String Interpolation: Permite renderizar las variables asociadas a nuestro componente en nuestro template
+
+```
+<h3>{{ title }}</h3>
+```
+
+Data Binding: Permite un enlace de datos bidireccional de nuestras variables (template / componente)
+
+
+```
+// Es necesario importar el modulo FormModule para que funcione la directiva ngModel
+<input type="text [(ngModel)]="title>
+```
+
+*ngIf: Es una directiva estructural que nos permite condicionar los elementos que deben aparecer en nuestro template con base a una cierta condición
+
+```
+<div *ngIf="variable == 'hola'">
+    Mostar el contenido de este elemento
+</div> 
+```
+
+*ngFor: Es una directiva estructural que nos permite iterar un conjunto de elementos en nuestro template
+
+```
+<ul>
+    <li *ngFor="let variable of conjuntoElementos; index as i">
+        {{ variable }}
+    </li> 
+</ul>
+```
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
