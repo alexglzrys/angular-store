@@ -1,5 +1,7 @@
-<p>{{ product.title }}</p>
+<h3>{{ product.title }}</h3>
 <img [src]="product.image" [alt]="product.title">
-<p>{{ product.description }}</p>
-<p>Precio: $ {{ product.price }} Kilo</p>
-<button (click)="addCart()">Agregar al carrito</button>
+<p class="description">{{ product.description }}</p>
+<div class="details">
+    <span class="price">Precio: $ {{ product.price }} Kilo</span>
+    <button (click)="addCart()">Agregar al carrito</button>
+</div>

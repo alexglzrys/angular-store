@@ -23,7 +23,7 @@
 
 
 <h3>Listado de productos</h3>
-<div *ngFor="let producto of productos">
+<div class="products-grid">
   <!-- Enviar datos al componente hijo, recibir datos del hijo mediante eventos personalizados -->
-  <app-product [product]="producto" (addCartEvent)="productoAgregado($event)"></app-product>
+  <app-product *ngFor="let producto of productos" [product]="producto" (addCartEvent)="productoAgregado($event)"></app-product>
 </div>
