@@ -50,6 +50,20 @@ Data Binding: Permite un enlace de datos bidireccional de nuestras variables (te
 </ul>
 ```
 
+Interface: Nos permiten definir tipos de datos personalizados en Angular, por lo general se usan para representar el tipo de dato de un objeto.
+
+```
+ng g i interfaces/nombre.model
+
+alumnos: Alumno[]
+
+export interface Alumno {
+    nombre: string;
+    apellidos: string;
+    edad: number
+}
+```
+
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
