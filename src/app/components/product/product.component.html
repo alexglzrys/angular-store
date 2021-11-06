@@ -1,7 +1,7 @@
-<h3>{{ product.title }}</h3>
+<h3>{{ product.title | uppercase }}</h3>
 <img [src]="product.image" [alt]="product.title">
-<p class="description">{{ product.description }}</p>
+<p class="description">{{ product.description | slice:0:150 }}</p>
 <div class="details">
-    <span class="price">Precio: $ {{ product.price }} Kilo</span>
+    <span class="price">Precio: {{ product.price | currency }} {{ product.unit | unidades}}</span>
     <button (click)="addCart()">Agregar al carrito</button>
 </div>

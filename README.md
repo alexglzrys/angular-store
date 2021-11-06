@@ -64,6 +64,15 @@ export interface Alumno {
 }
 ```
 
+## Linter en proyectos angular
+
+Instalar algun plugin para linter TSLint (al momento este se encuentra sin soporte)
+```
+ng lint
+```
+Nos ayuda a inspeccionar en todo el proyecto en búsqueda de malas prácticas al momento de codificar nuestro código
+
+
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
