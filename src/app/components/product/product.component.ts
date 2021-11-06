@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Product } from 'src/app/interfaces/product.model';
 
 @Component({
@@ -8,16 +8,19 @@ import { Product } from 'src/app/interfaces/product.model';
 })
 export class ProductComponent implements OnInit {
 
-  product: Product = {
-    title: 'Mandarina',
-    description: 'Mandarina fresca y jugosa sin semilla',
-    price: 8.90,
-    image: 'assets/images/mandarina.jpg'
-  }
+  // Property binding: Enviar datos a un componente hijo desde el componente padre
+  @Input() product: Product;
+  // Event binding: Enviar información al componte padre desde el componente hijo (eventos personalizados)
+  @Output() addCartEvent: EventEmitter<boolean> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addCart(): void {
+    console.log('Producto agregado al carrito');
+    this.addCartEvent.emit(true);
   }
 
 }

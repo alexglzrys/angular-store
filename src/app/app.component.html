@@ -24,11 +24,6 @@
 
 <h3>Listado de productos</h3>
 <div *ngFor="let producto of productos">
-  <p>{{ producto.title }}</p>
-  <img [src]="producto.image" [alt]="producto.title">
-  <p>{{ producto.description }}</p>
-  <p>Precio: $ {{ producto.price }} Kilo</p>
+  <!-- Enviar datos al componente hijo, recibir datos del hijo mediante eventos personalizados -->
+  <app-product [product]="producto" (addCartEvent)="productoAgregado($event)"></app-product>
 </div>
-
-<h3>Componentes</h3>
-<app-product></app-product>

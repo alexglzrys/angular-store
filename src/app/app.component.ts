@@ -40,4 +40,8 @@ export class AppComponent {
   eliminarElemento(index: number): void {
     this.nombres.splice(index, 1);
   }
+
+  productoAgregado(event: boolean): void {
+    console.log('El producto se ha vendido');
+  }
 }
