@@ -1,0 +1,10 @@
+<div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide" *ngFor="let image of images; index as i">
+        <img [src]="image" [alt]="'Slide ' + i">
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
