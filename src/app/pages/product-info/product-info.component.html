@@ -1,1 +1,14 @@
-<p>product-info works!</p>
+<app-header></app-header>
+
+<!-- El operador !. de TS permite evitar lanzar el error de que el objeto y su propiedad no existen
+Ya que su valor tarda en obtenerse hasta que el servicio emite una respuesta -->
+<div class="container">
+    <img [src]="product!.image" [alt]="product!.title">
+    <div>
+        <ul>
+            <li>{{ product!.title }}</li>
+            <li>{{ product!.price | currency }} {{ product.unit | unidades}}</li>
+        </ul>
+        <p>{{ product!.description }}</p>
+    </div>
+</div>

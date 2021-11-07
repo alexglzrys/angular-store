@@ -15,6 +15,7 @@ export class ProductInfoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private productsService: ProductsService) { }
 
   ngOnInit(): void {
+    // Obtener los parametros de ruta y solicitar la información del producto a un servicio
     this.route.params.subscribe((params: Params) => {
       this.product = this.productsService.getProduct(Number(params.id));
       console.log('params', params, 'Product', this.product);

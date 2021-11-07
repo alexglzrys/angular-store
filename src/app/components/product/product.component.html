@@ -1,5 +1,7 @@
 <h3>{{ product.title | uppercase }}</h3>
-<img [src]="product.image" [alt]="product.title">
+<a [routerLink]="['/products', product.id]">
+    <img [src]="product.image" [alt]="product.title">
+</a>
 <p class="description">{{ product.description | slice:0:150 }}</p>
 <div class="details">
     <span class="price">Precio: {{ product.price | currency }} {{ product.unit | unidades}}</span>
