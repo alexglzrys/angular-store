@@ -5,6 +5,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProductInfoComponent } from './pages/product-info/product-info.component';
 
 // Definición de rutas principales de la aplicación
 const routes: Routes = [
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: 'products',
     component: ProductsComponent
+  },
+  {
+    path: 'products/:id',
+    component: ProductInfoComponent,
   },
   {
     path: '**', // Si ninguna de las rutas hizo matchs, mostrar el siguiente componente
