@@ -6,6 +6,7 @@
 <div class="details">
     <!-- Al usar un Pipe que se encuentra gestionado por otro módulo, es necesario importar ese módulo en el módulo que gestiona este componente -->
     <span class="price">Precio: {{ product.price | currency }} {{ product.unit | unidades}}</span>
-    <button (click)="addCart()">Agregar al carrito</button>
+    <!-- Button Angular Material -->
+    <button mat-flat-button color="accent" (click)="addCart()">Agregar al carrito</button>
 </div>
 <span appHighlight>Online</span>
