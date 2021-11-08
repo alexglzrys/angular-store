@@ -10,10 +10,8 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { DemoComponent } from './pages/demo/demo.component';
-import { HomeComponent } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { BannerComponent } from './components/banner/banner.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { AppComponent as LayoutAppComponent } from './layouts/app/app.component';
@@ -27,10 +25,8 @@ import { AppComponent as LayoutAppComponent } from './layouts/app/app.component'
     ContactComponent,
     ProductsComponent,
     DemoComponent,
-    HomeComponent,
     HeaderComponent,
     FooterComponent,
-    BannerComponent,
     NotFoundComponent,
     ProductInfoComponent,
     LayoutAppComponent,

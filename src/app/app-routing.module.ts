@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DemoComponent } from './pages/demo/demo.component';
-import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
@@ -21,7 +20,9 @@ const routes: Routes = [
       },
       {
         path: 'home',
-        component: HomeComponent
+        // Cargar un componente de página mediante Lazy Load (es necesario que esté registrada en un módulo)
+        // El modulo debe tener registrado un sistema de rutas hijas
+        loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
       },
       {
         path: 'demo',
@@ -48,7 +49,11 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    // Cuando se usa Lazy Load, solo se cargan los archivos bajo demanda, sin embargo en páginas puede verse
+    // el efecto blanco cuando se navega entre ellas, por ello es importante definir una estrategia. 
+    preloadingStrategy: PreloadAllModules,
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
