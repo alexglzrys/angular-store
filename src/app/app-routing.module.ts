@@ -51,7 +51,7 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     // Cuando se usa Lazy Load, solo se cargan los archivos bajo demanda, sin embargo en páginas puede verse
-    // el efecto blanco cuando se navega entre ellas, por ello es importante definir una estrategia. 
+    // el efecto blanco cuando se navega entre ellas, por ello es importante definir una estrategia.
     preloadingStrategy: PreloadAllModules,
   })],
   exports: [RouterModule]

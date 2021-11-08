@@ -6,7 +6,11 @@ import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { UnidadesPipe } from './pipes/unidades/unidades.pipe';
 import { RouterModule } from '@angular/router';
 
-
+/**
+ * Este módulo agrupa todos los elementos que se deben compartir en nuestra aplicación Angular
+ * Es decir, elementos que se reutilicen en varias partes de nuestra aplicación
+ * Componentes, Directivas, Pipes, Interfaces.
+ */
 
 @NgModule({
   declarations: [

@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../interfaces/product.model';
+import { Product } from '../../../shared/interfaces/product.model';
 
-@Injectable({
+/**
+ * Podemos ignorar el decorador @Injectable si este servicio se encuentra
+ * registrado en el módulo de core, y a su vez este módulo se encuentra importado en
+ * app.module.ts.
+ *
+ * El funcionamiento es el mismo, pero de esta forma se tiene mejor organizada nuestra app.
+ */
+
+/*@Injectable({
   providedIn: 'root'
-})
+})*/
 export class ProductsService {
 
   products: Product[] = [

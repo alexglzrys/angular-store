@@ -12,6 +12,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { AppComponent as LayoutAppComponent } from './layouts/app/app.component';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FormsModule,  // Modulo que activa la directiva ngModel
     SharedModule, // Algunos componentes de este módulo hacen uso de componentes registrados en el modulo SharedModule
+    CoreModule,   // Modulo que importa todos nuestros servicios de aplicación
   ],
   providers: [],
   bootstrap: [AppComponent]

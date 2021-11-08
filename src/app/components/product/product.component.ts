@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Product } from 'src/app/interfaces/product.model';
+import { Product } from '../../shared/interfaces/product.model';
+
 
 @Component({
   selector: 'app-product',
