@@ -6,6 +6,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProductInfoComponent } from './pages/product-info/product-info.component';
 import { AppComponent as LayoutAppComponent } from './layouts/app/app.component';
+import { AdminGuard } from './guards/admin.guard';
 
 // Definición de rutas principales de la aplicación
 const routes: Routes = [
@@ -30,6 +31,7 @@ const routes: Routes = [
       },
       {
         path: 'contact',
+        canActivate: [AdminGuard],  // Esta ruta está protegida por un guardian.
         component: ContactComponent
       },
       {
