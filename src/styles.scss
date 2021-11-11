@@ -11,7 +11,7 @@
 .products-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
+    gap: 20px;
 }
 
 @media screen and (min-width: 600px) {
@@ -31,3 +31,10 @@
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.contenedor {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: block;
+}

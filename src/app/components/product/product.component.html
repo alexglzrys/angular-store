@@ -1,12 +1,28 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ product.title | uppercase }}</mat-card-title>
+    <mat-card-subtitle>Precio: {{ product.price | currency }} {{ product.unit | unidades}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="product.image" [alt]="product.title">
+  <mat-card-content class="description">
+    <p>{{ product.description | slice:0:150 }}</p>
+  </mat-card-content>
+  <mat-card-actions class="row">
+    <button mat-stroked-button color="primary" [routerLink]="['/products', product.id]">Ver detalles</button>
+    <button mat-stroked-button color="accent" (click)="addCart()">Agregar</button>
+  </mat-card-actions>
+</mat-card>
+
+<!--
 <h3>{{ product.title | uppercase }}</h3>
 <a [routerLink]="['/products', product.id]">
     <img [src]="product.image" [alt]="product.title">
 </a>
 <p class="description">{{ product.description | slice:0:150 }}</p>
-<div class="details">
+<div class="details"> -->
     <!-- Al usar un Pipe que se encuentra gestionado por otro módulo, es necesario importar ese módulo en el módulo que gestiona este componente -->
-    <span class="price">Precio: {{ product.price | currency }} {{ product.unit | unidades}}</span>
+    <!-- <span class="price">Precio: {{ product.price | currency }} {{ product.unit | unidades}}</span> -->
     <!-- Button Angular Material -->
-    <button mat-flat-button color="accent" (click)="addCart()">Agregar al carrito</button>
+    <!-- <button mat-flat-button color="accent" (click)="addCart()">Agregar al carrito</button>
 </div>
-<span appHighlight>Online</span>
+<span appHighlight>Online</span> -->

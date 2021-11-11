@@ -22,3 +22,8 @@ a.active {
 .w-100 {
   width: 100%;
 }
+:host {
+  background-color: #3f51b5;
+  width: 100%;
+  display: block;
+}

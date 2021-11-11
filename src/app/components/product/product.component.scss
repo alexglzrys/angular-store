@@ -1,36 +1,43 @@
 // Contenedor del componente
 :host {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 1rem;
+    // border: 1px solid #ccc;
+    // border-radius: 5px;
+    // padding: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    /*flex-direction: column;*/
+}
+.example-card {
+  display: flex;
+  flex-direction: column;
 }
 
 
-h3 {
-    text-align: center;
-    font-size: 18px;
-}
-img {
-    max-width: 100%;
-    height: auto;
-}
+// h3 {
+//     text-align: center;
+//     font-size: 18px;
+// }
+// img {
+//     max-width: 100%;
+//     height: auto;
+// }
 .description {
     font-size: 14px;
+    flex: 1;
 }
-.details {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: .5rem;
-}
-.price {
-    /*: rgb(11, 139, 75);*/
-    /*color: #fff;*/
-    display: inline-block;
-    padding: 2px;
-    font-size: 12px;
-}
+// .details {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     margin-top: .5rem;
+// }
+// .price {
+//     /*: rgb(11, 139, 75);*/
+//     /*color: #fff;*/
+//     display: inline-block;
+//     padding: 2px;
+//     font-size: 12px;
+// }
 /*button {
     padding: 4px;
     display: inline-block;
@@ -38,4 +45,10 @@ img {
     color: #fff;
     font-size: 12px;
     cursor: pointer;
+}*/
+
+
+/*.mat-card-image {
+  max-width: 100% !important;
+  height: auto !important;
 }*/

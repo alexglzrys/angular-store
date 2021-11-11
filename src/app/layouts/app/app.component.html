@@ -1,11 +1,14 @@
-<!-- La intensión de este componente es funcionar como un Layout, 
+<!-- La intensión de este componente es funcionar como un Layout,
     y lo unico que cambia es lo que se muestra como vista anidada.
-    
-    En este ejemplo lo que se reutiliza es el header y footer 
+
+    En este ejemplo lo que se reutiliza es el header y footer
 -->
 <app-header></app-header>
 
-<!-- Vista anidada -->
-<router-outlet></router-outlet>
+<div class="contenedor">
+  <!-- Vista anidada -->
+  <router-outlet></router-outlet>
+</div>
+
 
 <app-footer></app-footer>
