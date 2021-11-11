@@ -9,16 +9,25 @@ import { CommonModule } from '@angular/common';
  * Es importate volver a compilar el proyecto, ya que al agregar nuevas librerías, angular necesita pre-construirlas
  */
 import {MatButtonModule} from '@angular/material/button';
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
     MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatBadgeModule
   ],
   // Este módulo es compartido, por tanto, es necesario exportar los modulos de material (componentes) que se desa sean públicos para otros módulos
   exports: [
     MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatBadgeModule
   ]
 })
 export class MaterialModule { }

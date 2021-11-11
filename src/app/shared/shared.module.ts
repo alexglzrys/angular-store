@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HighlightDirective } from './directives/highlight/highlight.directive';
 import { UnidadesPipe } from './pipes/unidades/unidades.pipe';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '../material/material.module';
 
 /**
  * Este módulo agrupa todos los elementos que se deben compartir en nuestra aplicación Angular
@@ -21,7 +22,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule, // Si los componentes, directivas, Pipes de este modulo usan routerLink
+    RouterModule, // Si los componentes, directivas, Pipes de este modulo usan routerLink,
+    MaterialModule, // Los componentes de este módulo, harán uso de componentes material.
   ],
   // Los elementos que pueden ser consumidos por otros componentes cuando se importa este módulo
   // No basta con importar el módulo, se debe especificar que elementos serán accesibles fuera de este módulo
