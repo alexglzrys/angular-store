@@ -15,6 +15,7 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MaterialModule } from './material/material.module';
     FormsModule,  // Modulo que activa la directiva ngModel
     SharedModule, // Algunos componentes de este módulo hacen uso de componentes registrados en el modulo SharedModule
     CoreModule, BrowserAnimationsModule,   // Modulo que importa todos nuestros servicios de aplicación
-    MaterialModule, // Módulo que importa todos los componentes de Angular Material que usará nuestro proyecto
+    MaterialModule, // Módulo que importa todos los componentes de Angular Material que usará nuestro proyecto,
+    AdminModule,  // Registrar el módulo de tareas administrativas
   ],
   providers: [],
   bootstrap: [AppComponent]

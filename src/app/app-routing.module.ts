@@ -44,6 +44,12 @@ const routes: Routes = [
       },
     ]
   },
+  // Esta ruta no hace uso del LayoutComponent, por tanto la registro de forma separada
+  // Se registra mediante lAZY load ya que todo se encuentra agrupado bajo un modulo que tiene regostrado un routing con rutas hiajs
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
+  },
   {
     path: '**', // Si ninguna de las rutas hizo matchs, mostrar el siguiente componente
     component: NotFoundComponent,
