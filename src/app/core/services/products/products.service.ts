@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Product } from '../../../shared/interfaces/product.model';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 /**
  * Podemos ignorar el decorador @Injectable si este servicio se encuentra
@@ -15,6 +16,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProductsService {
+
+  // Recuperar el valor de una variable declarada en el archivo de entorno de configuración
+  API_URL = environment.api_url
 
   /*products: Product[] = [
     {
@@ -55,12 +59,12 @@ export class ProductsService {
   constructor(private http: HttpClient) { }
 
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>('https://platzi-store.herokuapp.com/products');
+    return this.http.get<Product[]>(this.API_URL);
     //return [...this.products];
   }
 
   getProduct(id: number): Observable<Product> {
-    return this.http.get<Product>(`https://platzi-store.herokuapp.com/products/${id}`);
+    return this.http.get<Product>(`${this.API_URL}/${id}`);
     //return this.products.find((prod: Product) => id === Number(prod.id));
   }
 }

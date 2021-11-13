@@ -18,10 +18,14 @@ export class ProductInfoComponent implements OnInit {
     // Obtener los parametros de ruta y solicitar la información del producto a un servicio
     this.route.params.subscribe((params: Params) => {
       //this.product = this.productsService.getProduct(Number(params.id));
-      this.productsService.getProduct(params.id).subscribe(product => {
-        this.product = product;
-      });
+      this.fetchProduct(params.id);
       console.log('params', params, 'Product', this.product);
+    });
+  }
+
+  fetchProduct(id: number) {
+    this.productsService.getProduct(id).subscribe(product => {
+      this.product = product;
     });
   }
 

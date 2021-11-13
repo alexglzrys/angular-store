@@ -1,6 +1,7 @@
 <!-- El operador !. de TS permite evitar lanzar el error de que el objeto y su propiedad no existen
 Ya que su valor tarda en obtenerse hasta que el servicio emite una respuesta -->
-<div class="container">
+
+<div class="container" *ngIf="product">
     <img [src]="product!.image" [alt]="product!.title">
     <div>
         <ul>
