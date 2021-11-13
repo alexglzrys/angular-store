@@ -1,0 +1,32 @@
+<h1>Lista de productos</h1>
+<table mat-table [dataSource]="products" class="mat-elevation-z1">
+  <!-- No es necesario crear un forEach para iterar el contenido del arreglo
+  Este componente ya hace esto por nosotros, pero es necesario especificar por cada columna let nombreVariable -->
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let product"> {{product.id}} </td>
+  </ng-container>
+  <!-- title Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> TITLE </th>
+    <td mat-cell *matCellDef="let product"> {{product.title}} </td>
+  </ng-container>
+  <!-- PRICE Column -->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> PRICE </th>
+    <td mat-cell *matCellDef="let product"> {{product.price}} </td>
+  </ng-container>
+  <!-- ACTIONS Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> ACTIONS </th>
+    <td mat-cell *matCellDef="let product; index as i">
+      <button mat-raised-button color="primary">Editar</button>
+      <button mat-raised-button color="warn" (click)="deleteProduct(product.id, i)">Eliminar</button>
+    </td>
+  </ng-container>
+
+  <!-- Especificar las columnas a proyectar en el Header -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
