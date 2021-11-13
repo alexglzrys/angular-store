@@ -53,4 +53,10 @@ export class ProductInfoComponent implements OnInit {
     })
   }
 
+  deleteProduct() {
+    this.productsService.deleteProduct(5).subscribe(response => {
+      console.log(response);
+    })
+  }
+
 }

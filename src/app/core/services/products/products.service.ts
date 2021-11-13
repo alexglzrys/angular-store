@@ -77,4 +77,9 @@ export class ProductsService {
   updateProduct(id: number, changes: Partial<Product>): Observable<Partial<Product>> {
     return this.http.put(`${this.API_URL}/products/${id}`, changes);
   }
+
+  // Depende de cada API REST, en esta caso me retorna como respuesta un boolean, Otras retornan el objeto eliminado
+  deleteProduct(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(`${this.API_URL}/products/${id}`);
+  }
 }
