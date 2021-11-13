@@ -73,6 +73,33 @@ ng lint
 Nos ayuda a inspeccionar en todo el proyecto en búsqueda de malas prácticas al momento de codificar nuestro código
 
 
+
+## Ambientes
+
+Podemos construir nuestra aplicación a partir de diferentes ambientes con el objetivo de hacer pruebas antes de lanzar a productivo
+- desarrollo (environment.ts)
+- producción (environment.prod.ts)
+
+Podemos crear nuestro propio ambiente, por ejemplo para staging, que tenga configuraciones precisas. (El nombre es indiferente)
+- staging (environment.stag.ts)
+
+En el archivo angular.json, es necesario registrar este nuevo ambiente.
+- Path configurations, registrar un path con el nombre de nuestro nuevo ambiente (en este caso stag). Se recomienda una copia de production
+- En el objeto recien creado, establecer las configuraciones necesarias (al ser un ambiente no productivo, se puede permitir el ser menos estrictos.)
+- Path serve, subpath configurations. Establecer el nombre de nuestro nuevo entorno. "ES EN ESTE PUNTO DONDE SE REGISTRA NUESTRO NUEVO AMBIENTE".
+
+Comandos
+```
+// Correr el servidor interno con el entorno especificado
+ng serve -c=stag    
+
+// Generar compilación basado en el entorno especificado (para demostraciones con cliente)
+ng build -c=stag
+
+Generar compilación para producción
+ng build --prod
+```
+
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
