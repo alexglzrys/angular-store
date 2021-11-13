@@ -14,11 +14,18 @@ export class ProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) { }
 
   ngOnInit(): void {
-    this.productos = this.productsService.getAllProducts();
+    this.fetchAllProducts();
+    //this.productos = this.productsService.getAllProducts();
   }
 
   productoAgregado(event: boolean): void {
     console.log('El producto se ha vendido');
+  }
+
+  fetchAllProducts() {
+    this.productsService.getAllProducts().subscribe(products => {
+      this.productos = products;
+    })
   }
 
 }

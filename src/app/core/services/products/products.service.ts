@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Product } from '../../../shared/interfaces/product.model';
+import { HttpClient } from "@angular/common/http";
+import { Observable } from 'rxjs';
 
 /**
  * Podemos ignorar el decorador @Injectable si este servicio se encuentra
@@ -9,12 +11,12 @@ import { Product } from '../../../shared/interfaces/product.model';
  * El funcionamiento es el mismo, pero de esta forma se tiene mejor organizada nuestra app.
  */
 
-/*@Injectable({
+@Injectable({
   providedIn: 'root'
-})*/
+})
 export class ProductsService {
 
-  products: Product[] = [
+  /*products: Product[] = [
     {
       id: 1,
       title: 'Mandarina',
@@ -47,15 +49,18 @@ export class ProductsService {
       unit: 'lt',
       image: 'assets/images/leche.jpg'
     }
-  ];
+  ];*/
 
-  constructor() { }
+  // Inyectar el servicio HttpClient
+  constructor(private http: HttpClient) { }
 
-  getAllProducts(): Product[] {
-    return [...this.products];
+  getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>('https://platzi-store.herokuapp.com/products');
+    //return [...this.products];
   }
 
-  getProduct(id: number): Product {
-    return this.products.find((prod: Product) => id === Number(prod.id));
+  getProduct(id: number): Observable<Product> {
+    return this.http.get<Product>(`https://platzi-store.herokuapp.com/products/${id}`);
+    //return this.products.find((prod: Product) => id === Number(prod.id));
   }
 }

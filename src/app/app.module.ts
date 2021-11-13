@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AdminModule } from './admin/admin.module';
+
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { AdminModule } from './admin/admin.module';
     SharedModule, // Algunos componentes de este módulo hacen uso de componentes registrados en el modulo SharedModule
     CoreModule, BrowserAnimationsModule,   // Modulo que importa todos nuestros servicios de aplicación
     MaterialModule, // Módulo que importa todos los componentes de Angular Material que usará nuestro proyecto,
-    AdminModule,  // Registrar el módulo de tareas administrativas
+    AdminModule,  // Registrar el módulo de tareas administrativas,
+    HttpClientModule,   // Peticiones HTTP
   ],
   providers: [],
   bootstrap: [AppComponent]
