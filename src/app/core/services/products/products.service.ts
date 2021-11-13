@@ -71,4 +71,10 @@ export class ProductsService {
   createProduct(product: Product): Observable<Product> {
     return this.http.post<Product>(`${this.API_URL}/products`, product);
   }
+
+  // Partial. Permite especificar solo una parte del tipo de dato especificado, es decir, en ese caso no estamos
+  // obligados a enviar todos los datos que define la interface Product
+  updateProduct(id: number, changes: Partial<Product>): Observable<Partial<Product>> {
+    return this.http.put(`${this.API_URL}/products/${id}`, changes);
+  }
 }

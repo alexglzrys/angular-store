@@ -42,4 +42,15 @@ export class ProductInfoComponent implements OnInit {
     })
   }
 
+  updateProduct() {
+    let myUpdateProduct: Partial<Product> = {
+      title: 'PANTALÓN EDICIÓN ESPECIAL',
+      description: 'Esta es la nueva moda para los programdores modernos de JS',
+      price: 1250
+    };
+    this.productsService.updateProduct(2, myUpdateProduct).subscribe(productChanged => {
+      console.log(productChanged);
+    })
+  }
+
 }
