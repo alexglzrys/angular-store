@@ -29,4 +29,17 @@ export class ProductInfoComponent implements OnInit {
     });
   }
 
+  createProduct() {
+    let myProduct: Product = {
+      title: 'CAMISETA DEPORTIVA',
+      price: 790,
+      description: 'Camiseta deportiva de equipos de futbol soccer liga Mexicana',
+      unit: 'unidad',
+      image: 'assets/images/mug.png'
+    }
+    this.productsService.createProduct(myProduct).subscribe(product => {
+      console.log(product);
+    })
+  }
+
 }
