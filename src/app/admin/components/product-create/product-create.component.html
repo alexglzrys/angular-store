@@ -24,6 +24,7 @@
           <input matInput type="number" formControlName="price" placeholder="Precio">
           <mat-error *ngIf="priceField.errors && priceField.dirty">
             <span *ngIf="priceField.hasError('required')">Este dato es requerido</span>
+            <!-- Apuntar al path de la validación personalizada para saber si el control no pasó la validación -->
             <span *ngIf="priceField.hasError('price_invalid')">El precio no puede superar los $3500</span>
           </mat-error>
         </mat-form-field>

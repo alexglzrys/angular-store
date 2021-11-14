@@ -1,0 +1,41 @@
+<!-- Asociar nuestro grupo de controles reactivos al formulario -->
+<form [formGroup]="formGroup" (ngSubmit)="saveProduct($event)" >
+  <mat-card>
+
+    <mat-card-header>
+      <mat-card-title>Editar Producto</mat-card-title>
+      <mat-card-subtitle>Ingrese la nueva información que a continuación se requiere</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <!-- Asociamos cada control con su respectivo controlador -->
+      <div class="row">
+        <div class="col-md-4">
+          <mat-form-field>
+            <input matInput type="text" formControlName="title" placeholder="Titulo">
+          </mat-form-field>
+        </div>
+        <div class="col-md-4">
+          <mat-form-field>
+            <input matInput type="number" formControlName="price" placeholder="Precio">
+            <mat-error *ngIf="priceField.errors && priceField.dirty">
+              <span *ngIf="priceField.hasError('required')">Este dato es requerido</span>
+              <!-- Apuntar al path de la validación personalizada para saber si el control no pasó la validación -->
+              <span *ngIf="priceField.hasError('price_invalid')">El precio no puede superar los $3500</span>
+            </mat-error>
+          </mat-form-field>
+         </div>
+         <div class="col-md-12">
+          <mat-form-field>
+            <textarea matInput cols="30" rows="10" formControlName="description" placeholder="Descripción"></textarea>
+          </mat-form-field>
+         </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button [disabled]="formGroup.invalid" type="submit">Actualizar</button>
+    </mat-card-actions>
+  </mat-card>
+  </form>
+
+
+

@@ -49,6 +49,7 @@ export class ProductCreateComponent implements OnInit {
       }
   }
 
+  // este getter es un helper que apunta al controlador de control reactivo (para hacer validaciones)
   get priceField() {
     return this.formGroup.get('price');
   }
