@@ -31,6 +31,7 @@ export class ProductListComponent implements OnInit {
     this.productService.deleteProduct(id).subscribe(response => {
       if (response) {
         console.log(index);
+        // Es valido hacer una consulta para retornar el listado de productos, Sin embargo, tambien podemos eliminar el elemento de nuestro arreglo con base en su indice, o id
         this.products = this.products.filter((product, i)  => i !== index);
       }
     })

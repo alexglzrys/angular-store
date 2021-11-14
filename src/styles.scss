@@ -38,3 +38,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   padding: 0 16px;
   display: block;
 }
+.mat-form-field-appearance-legacy .mat-form-field-label {
+  color: #fff;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+  background-color: #fff !important;
+}

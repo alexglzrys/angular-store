@@ -1,1 +1,26 @@
-<p>footer works!</p>
+<footer >
+    <div class="contenedor">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Acerca de Nosotros</h3>
+          <p>Somos una empresa en Internet que usa tecnologías basadas en JavaScript para presentar sus productos y servicios a sus clientes.</p>
+        </div>
+        <div class="col-md-4">
+          <h3>Noticias</h3>
+          <ul>
+            <li>Esta página usa Angular</li>
+            <li>El backend próximamente estará en Express JS</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h3>Contacto</h3>
+          <p>Sirvase en escribir su dirección de correo electrónico para recibir información acerca de noticias, eventos y ofertas</p>
+          <mat-form-field>
+            <!-- Asociar este control con el controlador de formulario reactivo -->
+            <input matInput type="text" placeholder="cuenta@correo.com" [formControl]="emailField" autocomplete="off">
+          </mat-form-field>
+          <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()" >Enviar</button>
+        </div>
+    </div>
+  </div>
+</footer>
