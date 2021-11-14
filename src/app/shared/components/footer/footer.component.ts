@@ -8,7 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class FooterComponent implements OnInit {
 
-  // controladores de control de formularo
+  // controladores de control de formulario (Especial cuando se tiene un solo control, aislado de un formulario complejo)
   emailField: FormControl;
 
   constructor() {
