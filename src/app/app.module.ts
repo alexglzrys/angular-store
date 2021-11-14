@@ -17,6 +17,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AdminModule } from './admin/admin.module';
+import { OrderModule } from './order/order.module';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { AdminModule } from './admin/admin.module';
     MaterialModule, // Módulo que importa todos los componentes de Angular Material que usará nuestro proyecto,
     AdminModule,  // Registrar el módulo de tareas administrativas,
     HttpClientModule,   // Peticiones HTTP
-
+    OrderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

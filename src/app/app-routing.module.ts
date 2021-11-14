@@ -42,6 +42,11 @@ const routes: Routes = [
         path: 'products/:id',
         component: ProductInfoComponent,
       },
+      {
+        // Este componente de ruta, si hace uso del componente Layout
+        path: 'order',
+        loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
+      }
     ]
   },
   // Esta ruta no hace uso del LayoutComponent, por tanto la registro de forma separada

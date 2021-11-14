@@ -19,8 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatTableModule} from '@angular/material/table';
-
-
+import {MatStepperModule} from '@angular/material/stepper';
 
 @NgModule({
   declarations: [],
@@ -37,6 +36,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatRadioModule,
     MatTableModule,
+    MatStepperModule,
   ],
   // Este módulo es compartido, por tanto, es necesario exportar los modulos de material (componentes) que se desa sean públicos para otros módulos
   exports: [
@@ -51,6 +51,7 @@ import {MatTableModule} from '@angular/material/table';
     MatSelectModule,
     MatRadioModule,
     MatTableModule,
+    MatStepperModule,
   ]
 })
 export class MaterialModule { }
