@@ -3,7 +3,7 @@
     <ng-template matStepLabel>Tus productos</ng-template>
     <div *ngIf="(products$ | async) as products">
       <h3 *ngIf="!products.length">No hay productos en el carrito</h3>
-        <div *ngFor="let product of products" class="row">
+        <div *ngFor="let product of (products | cart)" class="row">
           <div class="col-md-3">
             <img [src]="product.image" [alt]="product.title" width="120" height="120">
           </div>

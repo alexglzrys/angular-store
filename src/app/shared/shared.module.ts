@@ -7,6 +7,7 @@ import { UnidadesPipe } from './pipes/unidades/unidades.pipe';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CartPipe } from './pipes/cart/cart.pipe';
 
 /**
  * Este módulo agrupa todos los elementos que se deben compartir en nuestra aplicación Angular
@@ -20,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HighlightDirective,
     UnidadesPipe,
+    CartPipe,
   ],
   imports: [
     CommonModule,
@@ -34,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     HighlightDirective,
+    CartPipe,
   ]
 })
 export class SharedModule { }
