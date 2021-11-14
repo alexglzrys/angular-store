@@ -11,10 +11,10 @@
             <li><a mat-button [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
             <li><a mat-button [routerLink]="['/products']" routerLinkActive="active">Productos</a></li>
             <li><a mat-button [routerLink]="['/contact']" routerLinkActive="active">Contacto</a></li>
-            <li><a mat-button [routerLink]="['/demo']" routerLinkActive="active">Demo</a></li>
+            <li><a mat-button [routerLink]="['/demo']" routerLinkActive="active">Demo {{ total }}</a></li>
         </ul>
       </nav>
-      <a mat-raised-button matBadge="7" matBadgeColor="accent">
+      <a mat-raised-button [matBadge]="total_products" matBadgeColor="accent">
         <mat-icon aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
       </a>
     </div>

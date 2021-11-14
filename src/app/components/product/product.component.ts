@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
+import { CartService } from 'src/app/core/services/cart/cart.service';
 import { Product } from '../../shared/interfaces/product.model';
 
 
@@ -14,7 +15,7 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   // Event binding: Enviar información al componte padre desde el componente hijo (eventos personalizados)
   @Output() addCartEvent: EventEmitter<boolean> = new EventEmitter();
 
-  constructor() {
+  constructor(private cartServices: CartService) {
     console.log('1. Constructor - Especial para inicializar datos');
   }
 
@@ -38,6 +39,9 @@ export class ProductComponent implements OnInit, OnChanges, OnDestroy {
   addCart(): void {
     console.log('Producto agregado al carrito');
     this.addCartEvent.emit(true);
+
+    // Agregar este producto al carrito. El elemento que tiene que estar escuchando esos cambios es el botón que esta en header para indicar cuantos productos hay en la sesta
+    this.cartServices.addCart(this.product);
   }
 
 }

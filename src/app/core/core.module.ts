@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsService } from './services/products/products.service';
+import { CartService } from './services/cart/cart.service';
 
 /**
  * Este módulo agrupa a todos los servicios que se deben instanciar una sola vez
@@ -17,6 +18,7 @@ import { ProductsService } from './services/products/products.service';
   ],
   providers: [
     ProductsService,
+    CartService,
   ]
 })
 export class CoreModule { }
