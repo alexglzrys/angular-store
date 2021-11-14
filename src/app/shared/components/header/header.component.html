@@ -14,7 +14,9 @@
             <li><a mat-button [routerLink]="['/demo']" routerLinkActive="active">Demo {{ total }}</a></li>
         </ul>
       </nav>
-      <a mat-raised-button [matBadge]="total_products" matBadgeColor="accent">
+      <!-- <a mat-raised-button [matBadge]="total_products" matBadgeColor="accent"></a> -->
+      <!-- Me suscribo a mi carrito desde la vista -->
+      <a mat-raised-button [matBadge]="total$ | async" matBadgeColor="accent">
         <mat-icon aria-hidden="false" aria-label="Example home icon">shopping_cart</mat-icon>
       </a>
     </div>
