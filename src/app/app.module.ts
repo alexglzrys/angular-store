@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 
+// Registrar los modulos de firebase necesarios a usar en nuestra app
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
@@ -18,6 +23,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { AdminModule } from './admin/admin.module';
 import { OrderModule } from './order/order.module';
+import { AuthModule } from './auth/auth.module';
+
+
+// Instalar firebase: Primero se crea una cuenta en Firebase (crear app)
+// Instalar librería de firebase para angular. https://github.com/angular/angularfire
+// Al día de hoy algunas cosas se han reacomodado en los paquetes de dicha librería, por ejemplo el directorio compat no existe, en este sentido, todo su contenido se sacó un nivel
 
 
 @NgModule({
@@ -30,6 +41,7 @@ import { OrderModule } from './order/order.module';
     NotFoundComponent,
     ProductInfoComponent,
     LayoutAppComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,6 +53,9 @@ import { OrderModule } from './order/order.module';
     AdminModule,  // Registrar el módulo de tareas administrativas,
     HttpClientModule,   // Peticiones HTTP
     OrderModule,
+    AuthModule,
+    AngularFireModule.initializeApp(environment.firebase),  // Inicializar Firebase con nuestras credenciales de acceso (cuenta)
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

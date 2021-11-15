@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-training-store": {
+      "hosting": {
+        "angular-store": [
+          "angular-training-store"
+        ]
+      }
+    }
+  }
+}

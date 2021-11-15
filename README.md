@@ -100,6 +100,18 @@ Generar compilación para producción
 ng build --prod
 ```
 
+## Buenas prácticas
+
+Se recomienda generar modulos que agrupen páginas relacionadas (admin, auth, etc). Esos modulos deberían tener un routing asociado. Finalmente esos modulos deberían estar registrados en el modulo principal de la aplicación app.module
+```
+ng g m auth --routing
+ng g c auth/components/login
+
+```
+Para aplicar lazy loading, es necesario que cada página esté separa en un módulo diferente.
+
+
+
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
