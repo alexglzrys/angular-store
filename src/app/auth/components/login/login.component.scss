@@ -1,0 +1,30 @@
+form {
+  margin: 2rem auto;
+  padding: 1rem;
+  border: 1px solid gray;
+  width: 700px;
+  background-color: rgb(32, 162, 218);
+}
+div {
+  margin-bottom: 12px;
+}
+label {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 16px;
+}
+input {
+  padding: .8rem;
+  width: 100%;
+  font-size: 16px;
+}
+button {
+  padding: 12px 18px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+h2 {
+  text-align: center;
+  margin-top: 1rem;
+}

@@ -1,0 +1,14 @@
+<h2>Login</h2>
+<form [formGroup]="formGroup" (ngSubmit)="login($event)" >
+  <div>
+    <label for="">Correo Electrónico</label>
+    <input type="email" placeholder="Ingrese su correo electrónico" formControlName="email">
+  </div>
+  <div>
+    <label for="">Contraseña</label>
+    <input type="password" placeholder="Ingrese una contraseña para el acceso" formControlName="password">
+  </div>
+  <div>
+    <button type="submit">Acceder</button>
+  </div>
+</form>

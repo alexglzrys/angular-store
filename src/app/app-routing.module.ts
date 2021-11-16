@@ -31,7 +31,6 @@ const routes: Routes = [
       },
       {
         path: 'contact',
-        canActivate: [AdminGuard],  // Esta ruta está protegida por un guardian.
         component: ContactComponent
       },
       {
@@ -53,6 +52,7 @@ const routes: Routes = [
   // Se registra mediante lAZY load ya que todo se encuentra agrupado bajo un modulo que tiene regostrado un routing con rutas hiajs
   {
     path: 'admin',
+    canActivate: [AdminGuard],  // Esta ruta está protegida por un guardian.
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {
