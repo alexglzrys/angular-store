@@ -111,6 +111,35 @@ ng g c auth/components/login
 Para aplicar lazy loading, es necesario que cada página esté separa en un módulo diferente.
 
 
+## Publicar proyecto Angular en Firebase
+
+Instalar el CLI de firebase (depende de cada SO. https://firebase.google.com/docs/cli)
+```
+sudo npm install -g firebase-tools
+```
+
+Preparar el proyecto, inicializarlo con Firebase y subirlo
+```
+ng build --prod
+firebase init   // Seleccionar el proyecto de Firebase que se desea subir al Hosting
+firebase deploy   // Esto es por cada cambio hecho, y que se desea publicar en producción
+```
+
+Nota: No se debe sobre-escribir el index.HTML, ni mucho menos optmizarlo para SPA, y se debe indicar el directorio pÚblico para nuestro proyecto. En este caso es dist/angular-store
+
+Delegar temas de 404 a Angular y no Firebase, se necesita agregar la siguiente configuración al archivo de firebase.json
+```
+"rewrites": [
+      {
+        "source": "/public/**",
+        "destination": "/public.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+```
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
