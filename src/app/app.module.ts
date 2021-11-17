@@ -6,6 +6,7 @@ import { HttpClientModule } from "@angular/common/http";
 // Registrar los modulos de firebase necesarios a usar en nuestra app
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -56,6 +57,7 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     AngularFireModule.initializeApp(environment.firebase),  // Inicializar Firebase con nuestras credenciales de acceso (cuenta)
     AngularFireAuthModule,
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

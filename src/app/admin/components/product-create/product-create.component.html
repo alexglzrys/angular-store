@@ -29,11 +29,19 @@
           </mat-error>
         </mat-form-field>
        </div>
-       <div class="col-md-12">
+       <div class="col-md-6">
+          <input type="file" (change)="upload($event)">
+       </div>
+       <div class="col-md-6">
         <mat-form-field>
           <textarea matInput cols="30" rows="10" formControlName="description" placeholder="Descripción"></textarea>
         </mat-form-field>
        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <img *ngIf="(imageURL$ | async) as imagePreview" [src]="imagePreview" alt="Vista previa">
+      </div>
     </div>
   </mat-card-content>
   <mat-card-actions>
